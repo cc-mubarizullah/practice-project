@@ -12,7 +12,7 @@ public class IfAnObjectExist : MonoBehaviour
     {
         audioGo = GameObject.Find("auidoGameobject");
         Debug.Log(audioGo.name);
-        if(audioGo.TryGetComponent<AudioSource>(out audioSource))
+        if(audioGo.TryGetComponent<AudioSource>(out audioSource))  // this TryGetComponent returns true if the component is present we also have to save its out in variable
         {
             Debug.Log("audioSourceFound");
         }
