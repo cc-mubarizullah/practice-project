@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnOnCommand : ICommand
+public class TogglePowerCommand : ICommand
 {
 
     //this is termed as CONCRETE COMMAND
@@ -10,13 +10,13 @@ public class TurnOnCommand : ICommand
 
     LightBulb _lightbulb;
 
-    public TurnOnCommand(LightBulb lightBulb)   //we are making a constructor(it is called everytime class instantiate) so everytime a command is instantiated it has the refrence of Lightbulb
+    public TogglePowerCommand(LightBulb lightBulb)   //we are making a constructor(it is called everytime class instantiate) so everytime a command is instantiated it has the refrence of Lightbulb
     {
       _lightbulb = lightBulb;           //this lines means whenever this class is instantiated the refrece its taking of lightBulb in costructor paremeter will be used as the _lightBulb variable that will be used in whole class
       //it means whenever a new TurnOnCommand object is created, it needs to be provided with a refrence to a LightBulb object
     }
     public void Execute()
     {
-     _lightbulb.TurnOn();     //this is the actual command to turn on light bulb in LightBulb class
+     _lightbulb.TogglePower();     //this is the actual command to turn on light bulb in LightBulb class
     }
 }

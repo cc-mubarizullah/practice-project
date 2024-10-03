@@ -21,15 +21,15 @@ public class UserInput : MonoBehaviour
         
 
 
-        ICommand turnOnCommand = new TurnOnCommand(_lightBulb);   //make a variable of ICommand named as turnOnCommand which make instance of the turnOnCommand class which takes the refrence of LightBulb class instance
+        ICommand turnOnCommand = new TogglePowerCommand(_lightBulb);   //make a variable of ICommand named as turnOnCommand which make instance of the turnOnCommand class which takes the refrence of LightBulb class instance
         _lightSwitch = new LightSwitch(turnOnCommand);       //we are calling light switch which will control light on and off and pass off the turnOnCommand 
     }
     
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-        _lightSwitch.PowerOn();
+        _lightSwitch.TogglePower();
         }
     }
 }

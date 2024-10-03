@@ -8,7 +8,7 @@ public class LightBulb : MonoBehaviour
 
     //this script is attached to lightbulb and this script only have function to TurnOn
 
-
+    bool isPowerOn = false;
 
 
     GameObject child;
@@ -16,8 +16,18 @@ public class LightBulb : MonoBehaviour
     {
         child = transform.GetChild(0).gameObject;
     }
-    public void TurnOn()
+    public void TogglePower()
     {
-        child.SetActive(true);
+        if (isPowerOn == false)
+        {
+            child.SetActive(true);
+            isPowerOn = true;
+        }
+        else
+        {
+            child.SetActive(false);
+            isPowerOn = false;
+        }
     }
+
 }
